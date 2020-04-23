@@ -7,6 +7,7 @@ class HomePage extends StatelessWidget {
       child: Text(
         "Home Page",
         style: TextStyle(
+          backgroundColor: Colors.white,
           fontWeight: FontWeight.bold,
           fontSize: 20,
         ),

@@ -5,11 +5,13 @@ import 'package:sidebar_design/sidebar/sidebar.dart';
 class SideBarLayout extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return Stack(
-      children: <Widget>[
-        HomePage(),
-        SideBar()
-      ],
+    return Scaffold(
+      body: Stack(
+        children: <Widget>[
+          HomePage(),
+          SideBar()
+        ],
+      ),
     );
   }
 }
