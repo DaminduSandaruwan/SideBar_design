@@ -2,6 +2,7 @@ import 'dart:async';
 
 import 'package:flutter/material.dart';
 import 'package:rxdart/rxdart.dart';
+import 'package:sidebar_design/sidebar/custom_clipper.dart';
 import 'package:sidebar_design/sidebar/menu_item.dart';
 
 class SideBar extends StatefulWidget {
@@ -150,16 +151,19 @@ class _SideBarState extends State<SideBar> with SingleTickerProviderStateMixin<S
                   onTap: (){
                     onIconPressed();
                   },
-                  child: Container(
-                    width: 35,
-                    height: 110,
-                    color: Colors.black,
-                    alignment: Alignment.centerLeft,
-                    child: AnimatedIcon(
-                      progress: _animationController.view,
-                      icon: AnimatedIcons.menu_close,
-                      color: Colors.red,
-                      size: 25,
+                  child: ClipPath(
+                    clipper: CustomMenuClipper(),
+                    child: Container(
+                      width: 35,
+                      height: 110,
+                      color: Colors.black,
+                      alignment: Alignment.centerLeft,
+                      child: AnimatedIcon(
+                        progress: _animationController.view,
+                        icon: AnimatedIcons.menu_close,
+                        color: Colors.red,
+                        size: 25,
+                      ),
                     ),
                   ),
                 ),
@@ -171,3 +175,4 @@ class _SideBarState extends State<SideBar> with SingleTickerProviderStateMixin<S
     );
   }
 }
+
