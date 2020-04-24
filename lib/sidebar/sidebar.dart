@@ -1,7 +1,9 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:rxdart/rxdart.dart';
+import 'package:sidebar_design/block.navigation_bloc/navigation_bloc.dart';
 import 'package:sidebar_design/sidebar/custom_clipper.dart';
 import 'package:sidebar_design/sidebar/menu_item.dart';
 
@@ -113,14 +115,27 @@ class _SideBarState extends State<SideBar> with SingleTickerProviderStateMixin<S
                       MenuItem(
                         icon: Icons.home,
                         title: "Home",
+                        onTap: (){
+                          onIconPressed();
+                          BlocProvider.of<NavigationBloc>(context).add(NavigationEvents.HomePageClientEvent);
+                        }, 
                       ),
                       MenuItem(
                         icon: Icons.account_box,
                         title: "My Account",
+                        onTap: (){
+                          onIconPressed();
+                          BlocProvider.of<NavigationBloc>(context).add(NavigationEvents.MyAccountedClickEvent);
+                        },
                       ),
+                      
                       MenuItem(
                         icon: Icons.shopping_basket,
                         title: "My Orders",
+                        onTap: (){
+                          onIconPressed();
+                          BlocProvider.of<NavigationBloc>(context).add(NavigationEvents.MyOrdersClickedEvent);
+                        },
                       ),
                       MenuItem(
                         icon: Icons.card_giftcard,
