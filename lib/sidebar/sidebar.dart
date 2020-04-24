@@ -2,6 +2,7 @@ import 'dart:async';
 
 import 'package:flutter/material.dart';
 import 'package:rxdart/rxdart.dart';
+import 'package:sidebar_design/sidebar/menu_item.dart';
 
 class SideBar extends StatefulWidget {
 
@@ -71,7 +72,7 @@ class _SideBarState extends State<SideBar> with SingleTickerProviderStateMixin<S
             children: <Widget>[
               Expanded(
                 child: Container(
-                  color: Colors.red,
+                  color: Colors.black,
                   child: Column(
                     children: <Widget>[
                       SizedBox(height: 100),
@@ -87,7 +88,7 @@ class _SideBarState extends State<SideBar> with SingleTickerProviderStateMixin<S
                         subtitle: Text(
                           "developer@test.com",
                           style: TextStyle(
-                            color: Colors.black,
+                            color: Colors.red,
                             fontSize: 20,
                             fontWeight: FontWeight.bold,
                           ),
@@ -104,10 +105,21 @@ class _SideBarState extends State<SideBar> with SingleTickerProviderStateMixin<S
                         height: 64,
                         thickness: 0.5,
                         color: Colors.white.withOpacity(0.5),
-                        indent: 16,
-                        endIndent: 16,
+                        indent: 32,
+                        endIndent: 32,
                       ),
-
+                      MenuItem(
+                        icon: Icons.home,
+                        title: "Home",
+                      ),
+                      MenuItem(
+                        icon: Icons.account_box,
+                        title: "My Account",
+                      ),
+                      MenuItem(
+                        icon: Icons.shopping_basket,
+                        title: "My Orders",
+                      ),
                     ],
                   ),
                 ),
@@ -121,7 +133,7 @@ class _SideBarState extends State<SideBar> with SingleTickerProviderStateMixin<S
                   child: Container(
                     width: 35,
                     height: 110,
-                    color: Colors.red,
+                    color: Colors.grey,
                     alignment: Alignment.centerLeft,
                     child: AnimatedIcon(
                       progress: _animationController.view,
