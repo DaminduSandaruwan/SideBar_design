@@ -72,6 +72,7 @@ class _SideBarState extends State<SideBar> with SingleTickerProviderStateMixin<S
             children: <Widget>[
               Expanded(
                 child: Container(
+                  padding: const EdgeInsets.symmetric(horizontal:10),
                   color: Colors.black,
                   child: Column(
                     children: <Widget>[
@@ -120,6 +121,25 @@ class _SideBarState extends State<SideBar> with SingleTickerProviderStateMixin<S
                         icon: Icons.shopping_basket,
                         title: "My Orders",
                       ),
+                      MenuItem(
+                        icon: Icons.card_giftcard,
+                        title: "Wishlist",
+                      ),
+                      Divider(
+                        height: 64,
+                        thickness: 0.5,
+                        color: Colors.white.withOpacity(0.5),
+                        indent: 32,
+                        endIndent: 32,
+                      ),
+                      MenuItem(
+                        icon: Icons.settings,
+                        title: "Settings",
+                      ),
+                      MenuItem(
+                        icon: Icons.exit_to_app,
+                        title: "Logout",
+                      ),
                     ],
                   ),
                 ),
@@ -133,12 +153,12 @@ class _SideBarState extends State<SideBar> with SingleTickerProviderStateMixin<S
                   child: Container(
                     width: 35,
                     height: 110,
-                    color: Colors.grey,
+                    color: Colors.black,
                     alignment: Alignment.centerLeft,
                     child: AnimatedIcon(
                       progress: _animationController.view,
                       icon: AnimatedIcons.menu_close,
-                      color: Colors.black,
+                      color: Colors.red,
                       size: 25,
                     ),
                   ),
